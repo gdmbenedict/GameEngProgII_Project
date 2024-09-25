@@ -10,6 +10,7 @@ public class CameraManager : MonoBehaviour
 {
     [Header("Reference to the player's camera")]
     [SerializeField] public Camera playerCamera;
+    [SerializeField] public AudioListener playerListener;
 
     [Header("The target the camera will follow")]
     [SerializeField] private Transform followTarget;
