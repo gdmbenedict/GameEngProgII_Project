@@ -120,6 +120,7 @@ public class UIManager : MonoBehaviour
 
         loadingScreenCanvasGroup.alpha = 0;
         LoadingScreen.SetActive(false);
+        loadingBar.fillAmount = 0;
 
         Debug.Log("Ending Fadeout");
     }
@@ -156,7 +157,7 @@ public class UIManager : MonoBehaviour
             loadingBar.fillAmount = levelManager.GetLoadingProgress();
             yield return null;
         }
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
         Debug.Log("Ending Progress Bar");
         StartCoroutine(LoadingUIFadeOut());
     }
