@@ -9,12 +9,14 @@ public class PlayerLocomotionHandler : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private Animator anim;
 
     [Header("Debugging Values")]
     [SerializeField] public bool isSprinting;
 
     [Header("Debug Output (read only)")]
     [SerializeField] private float playerVelocity;
+    [SerializeField] private float playerVelocityHorizontal;
     [SerializeField] private bool playerIsGrounded;
 
     [Header("Movement Speeds")]
@@ -35,12 +37,19 @@ public class PlayerLocomotionHandler : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
+    private void Update()
+    {
+       //Debug.Log(playerVelocity);
+        anim.SetFloat("speed", playerVelocityHorizontal);
+    }
+
     public void HandleAllPlayerMovement()
     {
         playerIsGrounded = characterController.isGrounded; // Check if grounded
         HandlePlayerMovement();
         HandlePlayerRotation();
         UpdatePlayerVelocityMagnitude();  // Debugging tool
+        UpdatePlayerVelocityHorizontal();
 
     }
 
@@ -84,7 +93,6 @@ public class PlayerLocomotionHandler : MonoBehaviour
 
             // Move the character controller
             characterController.Move(moveDirection * Time.deltaTime + velocity * Time.deltaTime);
-        
     }
 
     private void HandlePlayerRotation()
@@ -121,6 +129,11 @@ public class PlayerLocomotionHandler : MonoBehaviour
     {
         // Calculate the player's velocity magnitude, including both movement and vertical velocity (gravity/jumping)
         playerVelocity = characterController.velocity.magnitude;
+    }
+
+    private void UpdatePlayerVelocityHorizontal()
+    {
+        playerVelocityHorizontal = Mathf.Sqrt(Mathf.Pow(characterController.velocity.x, 2) + Mathf.Pow(characterController.velocity.z, 2));
     }
 
 
