@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [Header("Gameplay UI Elements")]
     // Gameplay Specific UI Elements
     public Text LevelCount;
+    public Text GameplayMessage;
 
     [Header("Loading Screen UI Elements")]
     public CanvasGroup loadingScreenCanvasGroup;
@@ -127,7 +128,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator LoadingUIFadeIN()
     {
-        Debug.Log("Starting Fadein");
+        //Debug.Log("Starting Fadein");
         float timer = 0;
         LoadingScreen.SetActive(true);
 
@@ -140,13 +141,13 @@ public class UIManager : MonoBehaviour
 
         loadingScreenCanvasGroup.alpha = 1;
 
-        Debug.Log("Ending Fadein");
+        //Debug.Log("Ending Fadein");
         StartCoroutine(LoadingBarProgress());
     }
 
     private IEnumerator LoadingBarProgress()
     {
-        Debug.Log("Starting Progress Bar");
+        //Debug.Log("Starting Progress Bar");
         while (levelManager.scenesToLoad.Count <= 0)
         {
             //waiting for loading to begin
@@ -158,7 +159,7 @@ public class UIManager : MonoBehaviour
             yield return null;
         }
         //yield return new WaitForEndOfFrame();
-        Debug.Log("Ending Progress Bar");
+        //Debug.Log("Ending Progress Bar");
         StartCoroutine(LoadingUIFadeOut());
     }
 
@@ -167,5 +168,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         DisableAllUIPanels();
         uiPanel.SetActive(true);
+    }
+
+    public void UpdateGameplayMessage(string message)
+    {
+        GameplayMessage.text = message;
     }
 }

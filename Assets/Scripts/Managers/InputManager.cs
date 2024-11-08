@@ -29,6 +29,9 @@ public class InputManager : MonoBehaviour
     public bool isPauseKeyPressed = false;
     public bool isSprinting = false;
 
+    [Header("Object References")]
+    [SerializeField] private InteractionManager interactionManager;
+
 
     public void HandleAllInputs()
     {
@@ -78,6 +81,15 @@ public class InputManager : MonoBehaviour
     public void GetLook(InputAction.CallbackContext context)
     {
         cameraInput = context.ReadValue<Vector2>();
+    }
+
+    public void GetInteraction(InputAction.CallbackContext context)
+    {
+        if (context.performed && interactionManager.GetCanInteract())
+        {
+            Debug.Log("Input accepted");
+            interactionManager.Interact();
+        }
     }
 
     private void HandleCameraInput()

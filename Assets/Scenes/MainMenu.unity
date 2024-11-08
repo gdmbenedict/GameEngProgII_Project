@@ -1532,7 +1532,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2147483648
-  targetMaterial: {fileID: 2100000, guid: f2de8fe8cd74ab4469737ba08d975b23, type: 2}
 --- !u!1 &1438462438 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1625125363580622106, guid: e778663d324e19a48ab9d91fcd9af8f9,
@@ -1610,7 +1609,19 @@ MonoBehaviour:
     m_ActionId: 72b296eb-8b87-49ea-bd61-df99321f24a9
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1438462439}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: GetInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 98da04f0-2cd1-4479-9c61-102171cf9767
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -2190,6 +2201,11 @@ PrefabInstance:
       objectReference: {fileID: 216959803}
     - target: {fileID: 393610008284620649, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
+      propertyPath: GameplayMessage
+      value: 
+      objectReference: {fileID: 2384008851326326074}
+    - target: {fileID: 393610008284620649, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
       propertyPath: loadingScreenCanvasGroup
       value: 
       objectReference: {fileID: 216959805}
@@ -2543,6 +2559,11 @@ PrefabInstance:
       propertyPath: playerMove.m_Name
       value: Player Move
       objectReference: {fileID: 0}
+    - target: {fileID: 5697578372536420906, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: interactionManager
+      value: 
+      objectReference: {fileID: 2384008851326326073}
     - target: {fileID: 5697578372536420906, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       propertyPath: playerMove.m_SingletonActionBindings.Array.size
@@ -3014,6 +3035,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1438462441}
+    - targetCorrespondingSourceObject: {fileID: 7034935583075056663, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2384008851326326073}
   m_SourcePrefab: {fileID: 100100000, guid: e778663d324e19a48ab9d91fcd9af8f9, type: 3}
 --- !u!4 &2384008851326326070 stripped
 Transform:
@@ -3027,6 +3052,40 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 2384008851326326069}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2384008851326326072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7034935583075056663, guid: e778663d324e19a48ab9d91fcd9af8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384008851326326069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2384008851326326073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384008851326326072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4bb5df59f82134793e8666f528424c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRayDistance: 100
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &2384008851326326074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7080073777982698874, guid: e778663d324e19a48ab9d91fcd9af8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384008851326326069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

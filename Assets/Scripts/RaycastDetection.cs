@@ -21,12 +21,12 @@ public class RaycastDetection : MonoBehaviour
     {
         ray = playercam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         //Debug Drawline for requirements
-        Debug.DrawRay(ray.origin, ray.direction, Color.green);
+        //Debug.DrawRay(ray.origin, ray.direction, Color.green);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
             //debug Log for project requirements
-            Debug.Log("Object detected!\nID:\t" + hit.collider.gameObject.GetInstanceID() + "\nName:\t" + hit.collider.gameObject.name);
+            //Debug.Log("Object detected!\nID:\t" + hit.collider.gameObject.GetInstanceID() + "\nName:\t" + hit.collider.gameObject.name);
 
             if (hit.collider.GetComponent<MeshRenderer>())
             {
