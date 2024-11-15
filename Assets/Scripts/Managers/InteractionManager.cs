@@ -80,7 +80,7 @@ public class InteractionManager : MonoBehaviour
                 break;
 
             case Interactable.InteractactionType.pickup:
-                message = "Press LMB to pick up " + targetInteractable.name +".";
+                message = "Press LMB to pick up " + targetInteractable.pickupStats.GetName() +" Pickup.";
                 break;
         }
 
