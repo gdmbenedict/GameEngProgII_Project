@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
 
     public InteractactionType type;
     public GameObject targetGameObject;
+    public PickupStats pickupStats;
 
     public void Activate()
     {
@@ -28,7 +29,7 @@ public class Interactable : MonoBehaviour
 
             case InteractactionType.pickup:
                 gameObject.SetActive(false);
-                Debug.Log("Picked item up");
+                Debug.Log("Picked up a " + pickupStats.GetName() + " Pickup and got " + pickupStats.GetValue() + " points!");
                 break;
         }
     

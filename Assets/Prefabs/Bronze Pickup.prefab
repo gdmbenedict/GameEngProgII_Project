@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 578573304756955267}
   - component: {fileID: 5817412979405005145}
   m_Layer: 7
-  m_Name: Pickup
+  m_Name: Bronze Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eee06aacef45305478f4ec1b62a40710, type: 2}
+  - {fileID: 2100000, guid: b619432a64875f745ba04d535b77a272, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   targetGameObject: {fileID: 0}
+  pickupStats: {fileID: 11400000, guid: 5d9d546cd8086a9409c22766f6ccd374, type: 2}
 --- !u!114 &5817412979405005145
 MonoBehaviour:
   m_ObjectHideFlags: 0
