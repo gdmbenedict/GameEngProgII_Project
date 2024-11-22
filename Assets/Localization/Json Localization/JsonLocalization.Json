@@ -1,20 +1,23 @@
 {
     "languages": [
-        {
-            "lang": "en",
-            "title": "Game Title",
-            "play": "Play",
-            "quit": "Quit",
-            "options": "Options",
-            "credits": "Credits"
-        },
-        {
-            "lang": "fr",
-            "title": "Titre du Jeu",
-            "play": "Jouer",
-            "quit": "Quitter",
-            "options": "Options",
-            "credits": "Crédits"
-        }
+      {
+        "lang": "en",
+        "title": "Game Title",
+        "play": "Play",
+        "quit": "Quit",
+        "options": "Options",
+        "credits": "Credits",
+        "localize": "Localize"
+
+      },
+      {
+        "lang": "fr",
+        "title": "Titre du Jeu",
+        "play": "Jouer",
+        "quit": "Quitter",
+        "options": "Options",
+        "credits": "Crédits",
+        "localize": "Localiser"
+      }
     ]
 }
